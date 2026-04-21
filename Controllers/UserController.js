@@ -1,6 +1,6 @@
 
 import validator from "validator";
-import bcrypt from "bcryptjs"
+import bcrypt from "bcryptjs"; 
 import jwt from "jsonwebtoken"
 import dotenv from "dotenv";
 import UserSchema from "../Models/UserSchema.js"
@@ -12,7 +12,7 @@ dotenv.config();
 const createToken = (id, name, role, email) => {
     return jwt.sign({ id, name, role, email }, process.env.JWT_SECRET);
 }
-
+// slkdasdfasdf
 
 const UserSignUp = async (req, res)=>{
     try{
