@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' })); // Parse URL-enc
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+
 
 const port = process.env.PORT || 8000;
 
