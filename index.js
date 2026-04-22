@@ -21,6 +21,25 @@ app.use(cors());
 
 const port = process.env.PORT || 8000;
 
+const allowedOrigins = [
+    'http://localhost:5173',
+  ];
+  
+  app.use(
+    cors({
+      origin: (origin, callback) => {
+        // Allow requests with no origin (like mobile apps or curl)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.includes(origin)) {
+          callback(null, true);
+        } else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      },
+      credentials: true, // Allow credentials (cookies) to be sent
+    })
+  );
+
 app.get("/", (req, res) => {
   res.send("API Running");
   console.log("api is running");
