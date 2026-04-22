@@ -23,7 +23,7 @@ const port = process.env.PORT || 8000;
 
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://foodservicedashboard.onrender.com/',
+    'https://foodservicedashboard.onrender.com',
   ];
   
   app.use(
